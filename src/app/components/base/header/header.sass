@@ -1,0 +1,133 @@
+@mixin d-flex-center-center($direction: row)
+    display: flex
+    flex-direction: $direction
+    justify-content: center
+    align-items: center
+
+.logo
+    max-width: 100px
+    width: 100%
+    align-self: center
+    margin-left: 0.5rem
+
+#header-container
+    position: fixed
+    background-color: var(--space-cadet)
+    margin: 0 !important
+    padding: 0 !important
+
+
+#menu
+    @include d-flex-center-center()
+    margin: 0 !important
+    padding: 0 !important
+
+#login-btn-container
+    margin-right: 0.5rem !important
+
+#login-btn-container a 
+    width: 120px
+
+#menu__link, #login-btn-container a
+    color: var(--floral-white) !important
+
+#menu__link
+    &:hover
+        color: var(--floral-white-hover) !important
+        transition: color 450ms ease-in
+    &:active
+        color: var(--floral-white-active) !important
+        transition: color 450ms ease-in
+
+#menu__link, #login-btn-container a
+    border-radius: 4px
+
+#menu-hamburger__item, #menu-hamburger__link
+    max-width: 140px !important
+    width: 100% !important
+
+#menu-hamburger__link
+    border-radius: 0
+        
+#menu__link, #login-btn-container a, #menu-hamburger__link
+    border: 2px solid transparent
+    background-color: var(--tifanny-blue)
+
+    &:hover
+        background-color: var(--tifanny-blue-hover)
+        border-color: var(--floral-white)
+        transition: background-color 350ms, border-color 350ms
+    &:active
+        background-color: var(--tifanny-blue-active)
+        border-color:#FFFFFF
+        transition: background-color 350ms, border-color 350ms
+
+#menu-hamburger__link
+    width: 100%
+    color: var(--floral-white)
+
+#menu-hamburger
+    position: absolute
+    display: block
+    top: 100%
+    right: 0
+    transform: translateX(100vw) !important
+    transition: transform 550ms ease-out
+
+#menu-hamburger__item
+    background-color: var(--tifanny-blue) !important
+
+.menu-hamburger__label
+    display: none
+
+@media screen and ( max-width: 1024px)
+
+    .logo
+        margin-bottom: 0.5rem  
+        margin-left: 0 
+
+    #header-container__box
+        position: relative
+        flex-flow: column wrap    
+
+    #login-btn-container
+        margin: 0.5rem  
+        align-self: end
+
+@media screen and (max-width: 440px)
+
+    .logo
+        width: 50% !important
+        margin-bottom: 0 !important
+        margin-left: 0.5rem
+    
+    .menu-hamburger__label
+        @include d-flex-center-center()
+        background-color: var(--tifanny-blue)
+        border: 1px solid var(--floral-white)   
+        border-radius: 4px
+        margin-right: 0.25rem
+
+        &:hover
+            background-color: var(--tifanny-blue-hover)
+            border-color: var(--floral-white-hover)
+        &:active
+            background-color: var(--tifanny-blue-active)
+            border-color: #FFFFFF
+
+    #header-container__box
+        flex-direction: row
+
+    #menu, #login-btn-container
+        display: none !important
+    
+    #menu-hamburger
+        display: block !important
+    #menu-hamburger__link
+        text-transform: uppercase
+
+    #menu-hamburger__checkbox:checked ~ #menu-hamburger
+        background-color: var(--tifanny-blue)
+        transform: translateX(0) !important
+        margin: 0
+        transition: transform 350ms ease-out
