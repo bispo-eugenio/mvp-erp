@@ -1,0 +1,117 @@
+@mixin d-flex-center-center($direction: row)
+    display: flex !important
+    flex-direction: $direction
+    justify-content: center !important
+    align-content: center !important
+
+footer
+    background-color: var(--space-cadet)
+
+hr
+    border: 1px solid var(--floral-white)
+    width: 100% 
+
+#footer-menu, #footer-social, #footer-contact
+    text-align: left !important
+    max-width: 200px
+    width: 100%
+    height: 150px !important
+
+#footer-menu__title, #footer-social__title, #footer-contact__title
+    text-align: left
+    font-size: 1.5rem
+    
+#footer-menu__link, #footer-contact__item, #footer-contact__link,#terms-condition
+    
+    color: var(--bs-gray-700)
+
+    &:hover
+        color: var(--bs-gray-200)
+        
+        transition: color 300ms, 
+#footer-menu__link:hover, #footer-contact__link:hover, #terms-condition:hover
+    text-decoration: underline !important
+    transition: text-decoration 300ms
+
+
+#footer-social__link
+    img
+        opacity: 0.5
+    &:hover
+        img
+            transform: scale(1.05)
+            opacity: 1
+            transition: trasnform 350ms, opacity 350ms
+
+@media screen and (max-width: 1024px)
+
+    #footer-menu__title, #footer-social__title, #footer-contact__title
+        font-size: 1rem
+    
+    h5
+        font-size: 1rem
+
+    #copyright, #terms-condition, #footer-menu__link, 
+    #footer-contact__item, #footer-contact__link
+        font-size: 0.7rem
+
+    #footer-social__link img
+        width: 75%
+    
+    #footer-menu, #footer-social, #footer-contact
+        margin-left: 3rem
+        position: relative
+
+    #footer-menu:before, #footer-social:before
+        content: ""
+        position: absolute
+        height: 80%
+        left: 100%
+        border-left: 1px solid var(--floral-white)
+    
+    #footer-social__list 
+        width: 75% !important
+    
+
+@media screen and (max-width: 790px)
+
+    #footer-menu__title, #footer-social__title, #footer-contact__title
+        display: none
+    #footer-menu, #footer-social, #footer-contact
+        margin-left: 0
+    
+    #footer-menu:before, #footer-social:before
+        content: ""
+        position: block
+        height: 0
+        left: 0
+        border: none
+
+    #footer-container
+        @include d-flex-center-center($direction: column)
+        gap: 1rem
+    
+    h5, #footer-contact, #terms-condition
+        display: none
+    
+    #footer-menu, #footer-social
+        @include d-flex-center-center()
+        
+    #footer-menu__list
+        width: 50%
+        flex-flow: row wrap !important
+
+    #footer-menu
+        max-width: 600px
+        #footer-menu__list
+            justify-content: space-between !important
+            gap: 1rem
+            margin-bottom: 0
+        #footer-menu__link
+            font-size: 1rem !important
+
+    #footer-menu, #footer-social
+        height: 50% !important 
+    
+    #copyright
+        margin: 0 auto

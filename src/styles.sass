@@ -5,8 +5,14 @@
 //========== variáveis global ==========
 :root
     --tifanny-blue: #{#9DD9D2}
+    --tifanny-blue-active: #{#82B3AE}
+    --tifanny-blue-hover: #{#8FC5BF}
     --floral-white: #{#FFF8F0}
+    --floral-white-hover: #{#E8E1DA}
+    --floral-white-active: #{#D3CDC6}
     --space-cadet: #{#392F5A}
+    --space-cadet: #{#342B52}
+    --space-cadet-active: #{#2F274B}
     --font-josefin-sans: #{"Josefin Sans", sans-serif}
     --font-roboto: #{"Roboto", sans-serif}
     --font-weight-normal: #{500}
@@ -18,11 +24,19 @@ body,html, *
     margin: 0
     padding: 0
     border: 0
+    color: var(--floral-white)
     font-size: 100%
     font-size: var(--font-size)
     font-weight: var(--font-weight-normal)
     font-family: var(--font-roboto)
     box-sizing: border-box
+    text-decoration: none !important
+
+body
+    background-color: var(--floral-white)
+
+body, html
+    overflow: hidden
 
 p, span
     font-size: 100%
