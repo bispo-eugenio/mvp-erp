@@ -1,10 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   imports: [],
   templateUrl: './header.html',
-  styleUrl: './header.sass'
+  styleUrl: './header.sass',
 })
 export class Header {
 }
