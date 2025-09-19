@@ -1,4 +1,5 @@
-<article class="container-md" id="card-container">
-    <h3 id="card-container__title">TITULO</h3>
-    <p id="card-container__describe">TEXTO-TEXTO-TEXTO-TEXTO-TEXTO-TEXTO-TEXTO-TEXTO-TEXTO-TEXTO-TEXTO-TEXTO-TEXTO-TEXTO-TEXTO-TEXTOTEXTO-TEXTO-TEXTO-TEXTOTEXTO-TEXTO-TEXTO-TEXTOTEXTO-TEXTO-TEXTO-TEXTOTEXTO-TEXTO-TEXTO-TEXTOTEXTO-TEXTO-TEXTO-TEXTO</p>
+<article id="card-container">
+  <h3 id="card-container__title">{{ cardTitle() }}</h3>
+  <ion-icon [name]="iconName()" class="fs-3 ms-3"></ion-icon>
+  <p id="card-container__describe">{{ cardDescribe() }}</p>
 </article>
