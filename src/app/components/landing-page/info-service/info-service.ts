@@ -1,9 +1,9 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Card } from '../card/card';
 import Swiper from 'swiper';
-import { Scrollbar } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 
-Swiper.use([Scrollbar])
+Swiper.use([Pagination])
 
 @Component({
   selector: 'app-info-service',
@@ -15,12 +15,12 @@ export class InfoService implements AfterViewInit {
 
   ngAfterViewInit(): void {
         new Swiper('.swiper', {
-        slidesPerView: 3,
-        spaceBetween: 5,
-          scrollbar: {
-            el: '.swiper-scrollbar',
-            hide: true
-          }, 
+        slidesPerView: 4,
+        spaceBetween: 15,  
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+        },
     });
   }
 }
