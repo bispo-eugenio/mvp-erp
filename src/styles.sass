@@ -11,7 +11,7 @@
     --floral-white-hover: #{#E8E1DA}
     --floral-white-active: #{#D3CDC6}
     --space-cadet: #{#392F5A}
-    --space-cadet: #{#342B52}
+    --space-cadet-hover: #{#342B52}
     --space-cadet-active: #{#2F274B}
     --font-josefin-sans: #{"Josefin Sans", sans-serif}
     --font-roboto: #{"Roboto", sans-serif}
@@ -25,7 +25,7 @@ body,html, *
     padding: 0
     border: 0
     font-size: 100%
-    color: var(--floral-white)
+    color: var(--space-cadet)
     font-size: var(--font-size)
     font-weight: var(--font-weight-normal)
     font-family: var(--font-roboto)
@@ -33,10 +33,12 @@ body,html, *
     text-decoration: none !important
 
 body
-    background-color: var(--floral-white)
+    background-color: var(--floral-white) !important
 
 body, html
-    overflow: hidden
+    overflow-x: hidden
+    width: 100%
+    height: 100%
 
 p, span
     font-size: 100%

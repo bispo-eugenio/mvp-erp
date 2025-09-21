@@ -1,0 +1,90 @@
+#card-container
+    border: 1.5px solid transparent
+    max-width: 400px
+    width: 100%
+    height: 270px
+    background-color: var(--floral-white)
+    border-radius: 4px
+    box-shadow: 3px 3px 9px rgb(0, 0, 0, 0.25) !important
+    transition: 250ms ease-in
+
+    #card-container__title
+        font-size: 1.5rem
+        color: var(--space-cadet) !important
+        margin: 0
+
+    #card-container__describe, #card-container__title
+        padding: 0.5rem 0.5rem
+
+    #card-container__describe
+        color: var(--space-cadet)
+
+    #card-container__describe
+        margin-bottom: 0
+        font-size: calc(0.8rem + 0.024vw) !important
+        max-height: 185px !important
+        height: 100% !important
+      
+    &:hover
+        transform: scale(1.03)
+        border-color: var(--space-cadet)
+        background-color: var(--floral-white-hover)
+
+        #card-container__describe
+            color: var(--space-cadet) !important
+            transition: color 350ms ease-out
+
+        #card-container__title
+            color: var(--space-cadet) !important
+            transition: color 350ms ease-out
+
+@media screen and (max-width: 1140px)
+    #card-container
+        
+        #card-container__describe, #card-container__title
+            padding: 0.6rem !important
+
+        #card-container__title
+            font-size: 1rem
+        #card-container__describe
+            font-size: 0.7rem !important
+
+        ion-icon
+            font-size: 1.2rem !important
+
+@media screen and (max-width: 950px)
+    #card-container
+        height: 290px !important
+
+@media screen and (max-width: 775px)
+    #card-container
+        height: 290px !important
+
+        #card-container__title
+            font-size: 0.9rem
+        #card-container__describe
+            font-size: 0.6rem !important
+
+
+        ion-icon
+            font-size: 1.1rem !important
+
+@media screen and (max-width: 640px)
+    #card-container
+        max-width: 100% 
+        width: 100% 
+        height: 220px !important
+        margin: 0 auto
+
+        #card-container__title, ion-icon
+            font-size: 1.5rem  !important
+        
+        #card-container__describe
+            font-size: 0.9rem !important
+            height: auto !important
+
+@media screen and (max-width: 440px)
+    #card-container
+        height: 270px !important
+    ion-icon
+            font-size: 2rem !important

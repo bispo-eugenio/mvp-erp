@@ -30,40 +30,7 @@
               }
             ],
             "styles": [
-              "src/styles.sass",
-              {
-                "input": "node_modules/@ionic/angular/css/core.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/normalize.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/structure.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/typography.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/display.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/padding.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/float-elements.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/text-alignment.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/text-transformation.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/flex-utils.css"
-              },
-              {
-                "input": "src/theme/variables.css"
-              }
+              "src/styles.sass"
             ]
           },
           "configurations": {
@@ -122,7 +89,8 @@
             ],
             "styles": [
               "src/styles.sass",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.js"
@@ -168,8 +136,7 @@
   "cli": {
     "analytics": "7c17528e-7b96-439c-83a5-17bd9fff2a3d",
     "schematicCollections": [
-      "angular-eslint",
-      "@ionic/angular-toolkit"
+      "angular-eslint"
     ]
   },
   "schematics": {
