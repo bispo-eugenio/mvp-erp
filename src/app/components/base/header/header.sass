@@ -59,6 +59,10 @@
         background-color: var(--tifanny-blue-active)
         border-color: #FFFFFF
         transition: background-color 350ms, border-color 350ms
+    &:focus
+        background-color: var(--tifanny-blue-hover)
+        border-color: var(--floral-white)
+        transition: background-color 350ms, border-color 350ms
 
 #menu-hamburger__link
     width: 100%
@@ -75,8 +79,8 @@
 #menu-hamburger__item
     background-color: var(--tifanny-blue) !important
 
-.menu-hamburger__label
-    display: none
+.menu-hamburger__label, #menu-hamburger__checkbox, #menu-hamburger
+    display: none !important
 
 @media screen and ( max-width: 1024px)
 
@@ -93,6 +97,9 @@
         align-self: end
 
 @media screen and (max-width: 440px)
+
+    .menu-hamburger__label, #menu-hamburger
+        display: block !important
 
     .logo
         width: 50% !important
