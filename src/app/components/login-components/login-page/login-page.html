@@ -1,19 +1,28 @@
 <section class="d-flex justify-content-center align-items-center" id="login-container">
-  <div class="d-flex flex-column justify-content-center align-items-center gap-4" id="login-container__login-model">
-    <div id="login-container__logo-image">
-        <img src="/dist/assets/img/LOGO.svg" alt="Logo do sistema" class="w-25">
+  <!--Colocar ícones-->
+  <div class="d-flex flex-column align-items-center gap-4" id="login-container__login-model">
+    <div id="login-container__image-box" class="mb-5">
+      <img src="/dist/assets/img/LOGO.svg" alt="Logo do sistema" class="w-25" />
     </div>
-    <div class="d-flex " id="options">
-        <input type="checkbox" name="sign-in" id="sign-in-btn">
-        <label for="sign-in" id="options__sign-in">login</label>
-        <input type="checkbox" name="sign-up" id="sign-up-btn">
-        <label for="sign-up" id="options__sign-up">cadastro</label>
+    <div class="d-flex mb-5" id="options">
+      <button type="button" for="sign-in-btn" id="options__sign-in" value="0">login</button>
+      <button type="button" for="sign-up-btn" id="options__sign-up" value="1">cadastro</button>
     </div>
-    <div class="d-flex flex-column justify-content-center align-items-center" id="inputs-form">
-      <input type="text" name="email" id="inputs-form__email" placeholder="email or name">
-      <input type="password" name="password" id="inputs-form__password" placeholder="password">
-    </div>
-    <div class="button-container">
+    <form class="d-flex flex-column justify-content-center align-items-center" id="inputs-form">
+      <input type="text" name="email" id="inputs-form__email" placeholder="email" />
+      <input type="password" name="password" id="inputs-form__password" placeholder="senha" />
+    </form>
+    <div class="d-flex flex-column gap-2" id="button-container">
+
+      <div id="remember-me-container" class="d-flex align-content-center gap-1">
+        <input type="checkbox" name="remember-me" id="remember-me-container__checkbox">
+        <label for="remember-me-container__checkbox" id="remember-me-container__text-remeber-me">Lembra-se da senha</label>
+      </div>
+      <div id="terms-container" class="d-flex align-content-center gap-1">
+        <input type="checkbox" name="privacy-terms" id="button-container__terms">
+        <label for="button-container__terms" id="button-container__text-terms">Você concorda com nossos termos de privacidade</label>
+      </div>
+      <button id="button-container__button" disabled>Login</button>
     </div>
   </div>
 </section>
