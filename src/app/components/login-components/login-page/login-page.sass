@@ -1,5 +1,3 @@
-*
-    // outline: 1px solid red
 
 #login-container
     background-color: var(--space-cadet-hover)
@@ -9,7 +7,7 @@
 #login-container__login-model
     background-color: var(--space-cadet)
     max-width: 450px
-    max-height: 550px
+    max-height: 560px
     width: 100%
     height: 100%
     border-radius: 8px
@@ -63,7 +61,24 @@
 
 
 #button-container__terms, #remember-me-container__checkbox
-    width: 10px
+    width: 15px
 #button-container__text-terms, #remember-me-container__text-remeber-me
     color: var(--floral-white) !important
-    font-size: 0.7rem
+    font-size: 0.8rem
+
+#button-container__button
+    border: 2px solid transparent
+    border-radius: 8px
+    padding: 0.5rem
+    font-family: var(--font-josefin-sans)
+    font-weight: var(--font-weight-bold)
+    background-color: var(--floral-white)
+
+    &:hover
+        border-color: var(--floral-white)
+        background-color: var(--tifanny-blue)
+        color: var(--floral-white)
+        transition: 200ms ease-in
+    &:active
+        color: var(--floral-white-hover)
+        background-color: var(--tifanny-blue-hover)
