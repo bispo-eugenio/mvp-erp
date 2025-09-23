@@ -1,12 +1,18 @@
 <section class="container-fluid" id="contact-container">
-    <h2 id="contact-container__title">Contato</h2>
-    <form id="contact-container__form">
-        <input type="text" placeholder="nome completo">
-        <input type="text" placeholder="empresa" required>
-        <input type="email" placeholder="email" required>
-        <input type="text" placeholder="cep">
-        <textarea name="" id="contact-container__describe"></textarea>
-        <button id="contact-container__button">enviar</button>
+  <h2 id="contact-container__title">Contato</h2>
+  <div class="d-flex align-content-center" id="contact-container__box">
+    <div id="image-container" class="w-50">
+      <img src="/dist/assets/img/FUNCIONALIDADES.svg" alt="Imagem mostrando gráficos do sistema">
+    </div>
+    <form id="contact-container__form" class="w-50 gap-4">
+      <input name="name" type="text" placeholder="nome completo">
+      <input name="enterprise" type="text" placeholder="empresa" required>
+      <input name="email" type="email" placeholder="email" required>
+      <input name="cep" type="text" placeholder="cep">
+      <textarea name="describe" id="contact-container__describe" placeholder="descrição"></textarea>
+      <div>
+        <button id="contact-container__button" class="align-self-end">enviar</button>
+      </div>
     </form>
-    
+  </div>
 </section>

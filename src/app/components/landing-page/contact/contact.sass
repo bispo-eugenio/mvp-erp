@@ -1,0 +1,92 @@
+@mixin d-flex-center-center($direction: row)
+    display: flex
+    flex-direction: $direction
+    justify-content: center
+    align-items: center
+
+*
+    // outline: 1px solid red
+// #service-container__title colocar margin: 0.5rem; media query no card para max-width: 320px =>  #card-container {width = 290px}
+#contact-container
+    @include d-flex-center-center(column)
+    padding: 1rem
+
+#contact-container__title
+    text-align: center
+    margin: 2rem auto !important
+    padding-bottom: 0.5rem
+    border-bottom: 4px solid var(--tifanny-blue)
+
+#contact-container__box
+    width: 100%
+
+#contact-container__form
+    @include d-flex-center-center(column)
+
+#contact-container__form input, #contact-container__form textarea
+    border: 2px solid transparent
+    border-color: var(--tifanny-blue)
+    border-color: var(--space-cadet)
+    border-radius: 4px
+    padding-left: 0.5rem
+    font-size: 0.8rem
+
+#contact-container__form input::placeholder, #contact-container__form textarea::placeholder
+    color: var(--space-cadet)
+#contact-container__form input
+    width: 350px
+    height: 30px
+
+#contact-container__form textarea
+    resize: none
+    width: 350px
+    height: 100px
+
+#image-container 
+    @include d-flex-center-center()
+
+#image-container img
+    width: 300px
+    border: 0.5px solid transparent
+    border-radius: 100%
+    user-select: none 
+    pointer-events: none
+
+#contact-container__button
+    border: 2px solid transparent
+    background-color: var(--space-cadet)
+    color: var(--floral-white)
+    border-radius: 8px
+    width: 100px
+    padding: 0.5rem
+
+    &:hover
+        background-color: var(--tifanny-blue)
+        color: var(--space-cadet)
+        transition: 200ms
+    &:active
+        border-color: var(--space-cadet)
+        background-color: var(--tifanny-blue-hover)
+        color: var(--space-cadet-hover)
+        transition: 200ms   
+
+@media screen and (max-width: 790px)
+    #image-container
+        display: none
+    
+    #contact-container__box
+        @include d-flex-center-center()
+        
+
+    #contact-container__button
+        margin: 0
+        align-self: center !important
+        width: 180px
+
+@media screen and (max-width: 440px)
+
+    #contact-container__form input
+        width: 235px !important
+        height: 35px
+    #contact-container__form textarea
+        width: 235px !important
