@@ -3,10 +3,11 @@ import { Header } from '../../base/header/header';
 import { Footer } from '../../base/footer/footer';
 import { InfoService } from '../info-service/info-service';
 import { Contact } from "../contact/contact";
+import { About } from '../about/about';
 
 @Component({
   selector: 'app-home-page',
-  imports: [Header, Footer, InfoService, Contact],
+  imports: [Header, Footer, InfoService, Contact, About],
   templateUrl: './home-page.html',
   styleUrl: './home-page.sass'
 })
