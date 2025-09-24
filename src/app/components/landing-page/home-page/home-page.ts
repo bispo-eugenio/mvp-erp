@@ -4,10 +4,11 @@ import { Footer } from '../../base/footer/footer';
 import { InfoService } from '../info-service/info-service';
 import { Contact } from "../contact/contact";
 import { About } from '../about/about';
+import { Home } from "../home/home";
 
 @Component({
   selector: 'app-home-page',
-  imports: [Header, Footer, InfoService, Contact, About],
+  imports: [Header, Footer, InfoService, Contact, About, Home],
   templateUrl: './home-page.html',
   styleUrl: './home-page.sass'
 })
