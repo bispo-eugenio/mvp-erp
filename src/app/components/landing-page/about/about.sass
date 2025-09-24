@@ -1,0 +1,60 @@
+#about-container
+    padding: 0 2rem
+    width: 100%
+    height: 100vh
+
+#about-container__title
+    text-align: center
+    margin: 2rem auto !important
+    padding-bottom: 1rem
+    border-bottom: 4px solid var(--tifanny-blue)
+
+#box-info__title
+    width: 100%
+
+#about-container__box-image img
+    width: 100%
+
+#about-container__title
+    font-size: 2rem
+
+#box-info__button
+    background-color: var(--space-cadet)
+    color: var(--floral-white)
+    font-weight: var(--font-weight-normal)
+
+    &:hover
+        background-color: var(--tifanny-blue)
+        color: var(--space-cadet)
+    &:active
+        background-color: var(--tifanny-blue-hover)
+        color: var(--space-cadet-hover)
+        border-color: var(--space-cadet) 
+    
+@media screen and (max-width: 790px)
+
+    #about-container
+        padding: 0 1rem !important
+        height: auto
+
+    #box-info__title
+        font-size: 1.5rem
+
+    #box-info__text
+        font-size: 0.8rem
+
+    #about-container__box-image
+        display: none
+
+    #about-container__box-info
+        background-color: #9DD9D250
+        padding: 2rem
+        border-radius: 4px
+
+    #box-info__button
+        width: 100%
+
+@media screen and (max-width: 640px)
+
+    #about-container__box-image
+        display: none
