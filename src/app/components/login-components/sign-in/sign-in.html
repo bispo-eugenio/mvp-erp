@@ -1,0 +1,13 @@
+<dialog open class="d-flex flex-column gap-2 user-select-none" id="dialog-container" tabindex="-1">
+  <form class="d-flex flex-column justify-content-center align-items-center" id="inputs-form">
+    <input type="text" name="email" id="inputs-form__email" placeholder="email">
+    <input type="password" name="password" id="inputs-form__password" placeholder="senha">
+  </form>
+  <div class="d-flex flex-column gap-2" id="button-container">
+    <div id="remember-me-container" class="d-flex align-content-center gap-1">
+      <input type="checkbox" name="remember-me" id="remember-me-container__checkbox">
+      <label for="remember-me-container__checkbox" id="remember-me-container__text-remeber-me">Lembra-se da senha</label>
+    </div>
+    <button type="submit" id="button-container__button-sign-in" disabled>Login</button>
+  </div>
+</dialog>
