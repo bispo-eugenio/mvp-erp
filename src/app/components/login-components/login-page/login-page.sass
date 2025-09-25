@@ -1,4 +1,3 @@
-
 #login-container
     background-color: var(--space-cadet-hover)
     width: 100%
@@ -7,7 +6,7 @@
 #login-container__login-model
     background-color: var(--space-cadet)
     max-width: 450px
-    max-height: 560px
+    max-height: 580px
     width: 100%
     height: 100%
     border-radius: 8px
@@ -19,13 +18,26 @@
 
 #options__sign-in, 
 #options__sign-up
+    cursor: pointer 
     font-family: var(--font-josefin-sans)
     font-weight: var(--font-weight-bold)
     aspect-ratio: 16/8
     text-align: center
+    border: 2px solid transparent
     border-radius: 8px
     padding: 1rem 
     background-color: var(--tifanny-blue)
+    transition: 200ms ease-out
+
+
+#options__sign-in:hover, 
+#options__sign-up:hover
+    background-color: var(--tifanny-blue-hover)
+    transition: 200ms
+
+#options__sign-in:active, 
+#options__sign-up:active
+    background-color: var(--tifanny-blue-active)
 
 #options__sign-in
     border-top-right-radius: 0
@@ -37,48 +49,14 @@
 
 #sign-in-btn:checked ~ #options__sign-in
     background-color: var(--floral-white)
+    border-color: var(--space-cadet)
+    cursor: default
 
 #sign-up-btn:checked ~ #options__sign-up
     background-color: var(--floral-white)
+    border-color: var(--space-cadet)
+    cursor: default
 
-
-#inputs-form input
-    width: 250px
-    height: 50px
-    padding: 1rem
-
-#inputs-form__email
-    border-bottom-right-radius: 0 !important
-    border-bottom-left-radius: 0 !important
-    
-#inputs-form__password
-    border-top-right-radius: 0 !important
-    border-top-left-radius: 0 !important
-
-#inputs-form__email,
-#inputs-form__password
-    border-radius: 8px
-
-
-#button-container__terms, #remember-me-container__checkbox
-    width: 15px
-#button-container__text-terms, #remember-me-container__text-remeber-me
-    color: var(--floral-white) !important
-    font-size: 0.8rem
-
-#button-container__button
-    border: 2px solid transparent
-    border-radius: 8px
-    padding: 0.5rem
-    font-family: var(--font-josefin-sans)
-    font-weight: var(--font-weight-bold)
-    background-color: var(--floral-white)
-
-    &:hover
-        border-color: var(--floral-white)
-        background-color: var(--tifanny-blue)
-        color: var(--floral-white)
-        transition: 200ms ease-in
-    &:active
-        color: var(--floral-white-hover)
-        background-color: var(--tifanny-blue-hover)
+@media screen and (max-width: 590px)
+    #login-container__login-model
+        width: 95%

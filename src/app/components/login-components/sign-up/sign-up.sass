@@ -1,0 +1,53 @@
+#dialog-container
+    margin: 0 auto
+    background-color: var(--space-cadet)
+
+#dialog-container:focus
+    outline: none
+    
+#inputs-form input
+    width: 250px
+    height: 50px
+    padding: 1rem
+
+#inputs-form__email
+    border-bottom-right-radius: 0 !important
+    border-bottom-left-radius: 0 !important
+    
+#inputs-form__password
+    border-top-right-radius: 0 !important
+    border-top-left-radius: 0 !important
+
+#inputs-form__email,
+#inputs-form__password
+    border-radius: 8px
+
+#button-container__terms, #remember-me-container__checkbox
+    width: 15px
+#button-container__text-terms, #remember-me-container__text-remeber-me
+    color: var(--floral-white) !important
+    font-size: 0.8rem
+
+#button-container__button-sign-up
+    cursor:  pointer !important
+    border: 2px solid transparent
+    border-radius: 8px
+    padding: 0.5rem
+    font-family: var(--font-josefin-sans)
+    font-weight: var(--font-weight-bold)
+    background-color: var(--floral-white)
+
+    &:hover
+        background-color: var(--tifanny-blue)
+        color: var(--floral-white)
+        transition: 200ms ease-in
+    &:active
+        border-color: var(--floral-white)
+        color: var(--floral-white-hover)
+        background-color: var(--tifanny-blue-hover)
+
+@media screen and (max-width: 590px)
+     
+    #button-container
+        width: 85%
+        margin: 0 auto
