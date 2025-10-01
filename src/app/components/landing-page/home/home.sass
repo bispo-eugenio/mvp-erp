@@ -7,11 +7,17 @@
     height: 100vh
 
 .image-container
+    padding-top: 1rem
     width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
 
 .image-container img
+    max-width: 1428px
     text-align: center
     width: 100%
+    box-sizing: content-box
 
 @media screen and (max-width: 1024px)
     .swiper-button-prev, .swiper-button-next
@@ -19,3 +25,5 @@
 
     #home-container, .swiper-container, .image-container img
         height: auto
+    #home-container
+        margin-top: 10rem

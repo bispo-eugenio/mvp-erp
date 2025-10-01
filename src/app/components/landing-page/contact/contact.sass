@@ -4,18 +4,20 @@
     justify-content: center
     align-items: center
 
-*
-    // outline: 1px solid red
-// #service-container__title colocar margin: 0.5rem; media query no card para max-width: 320px =>  #card-container {width = 290px}
 #contact-container
     @include d-flex-center-center(column)
+    justify-content: space-around !important
     padding: 1rem
+    margin-bottom: 2rem 
+    width: 100%
+    height: 100vh
 
 #contact-container__title
     text-align: center
-    margin: 2rem auto !important
-    padding-bottom: 0.5rem
+    padding-bottom: 1rem
     border-bottom: 4px solid var(--tifanny-blue)
+    margin: 2rem auto 1rem auto !important
+    font-size: 3rem
 
 #contact-container__box
     width: 100%
@@ -33,20 +35,20 @@
 
 #contact-container__form input::placeholder, #contact-container__form textarea::placeholder
     color: var(--space-cadet)
+    font-size: 1rem
 #contact-container__form input
-    width: 350px
-    height: 30px
+    width: 450px
+    height: 40px
 
 #contact-container__form textarea
     resize: none
-    width: 350px
-    height: 100px
-
+    width: 450px
+    height: 200px
 #image-container 
     @include d-flex-center-center()
 
 #image-container img
-    width: 300px
+    width: 450px
     border: 0.5px solid transparent
     border-radius: 100%
     user-select: none 
@@ -70,7 +72,9 @@
         color: var(--space-cadet-hover)
         transition: 200ms   
 
-@media screen and (max-width: 790px)
+@media screen and (max-width: 1024px)
+    #contact-container
+        justify-content: center !important
     #image-container
         display: none
     
@@ -83,10 +87,8 @@
         align-self: center !important
         width: 180px
 
-@media screen and (max-width: 440px)
-
     #contact-container__form input
-        width: 235px !important
-        height: 35px
+        width: 350px
+
     #contact-container__form textarea
-        width: 235px !important
+        width: 350px
