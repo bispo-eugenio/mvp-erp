@@ -1,14 +1,20 @@
-<dialog open class="d-flex flex-column gap-2 user-select-none" id="dialog-container" tabindex="-1">
+<dialog open class="d-flex flex-column user-select-none" id="dialog-container" tabindex="-1">
+  <!-- Forms para cadastro -->
   <form class="d-flex flex-column justify-content-center align-items-center" id="inputs-form">
-    <input type="text" name="email" id="inputs-form__email" placeholder="email">
-    <input type="text" name="name" id="inputs-form__name" placeholder="nome">
-    <input type="password" name="password" id="inputs-form__password" placeholder="senha">
-  </form>
-  <div class="d-flex flex-column gap-2" id="button-container">
-    <div id="terms-container" class="d-flex align-content-center gap-1">
-      <input type="checkbox" name="privacy-terms" id="button-container__terms">
-      <label for="button-container__terms" id="button-container__text-terms">Você concorda com nossos termos de privacidade</label>
+    <!-- Campos de entrada de dados -->
+    <input type="text" name="email" id="inputs-form__email" placeholder="email" [(ngModel)]="this.user.email">
+    <input type="text" name="name" id="inputs-form__name" placeholder="nome" [(ngModel)]="this.user.name" minlength="3"
+      maxlength="15">
+    <input type="text" name="cnpj" id="inputs-form__cnpj" placeholder="cnpj" [(ngModel)]="this.user.cnpj">
+    <input type="password" name="password" id="inputs-form__password" placeholder="senha" minlength="8"
+      [(ngModel)]="this.user.password">
+    <!-- box para os botões de submit e checkbox -->
+    <div class="d-flex flex-column gap-2 mt-4" id="button-container">
+      <div id="terms-container" class="d-flex gap-1">
+        <input type="checkbox" name="privacy-terms" id="button-container__terms">
+        <label for="button-container__terms" id="button-container__text-terms">Você concorda com nossos <a href="#">termos de privacidade</a>.</label>
+      </div>
+      <button type="submit" id="button-container__button-sign-up" (click)="signUp()">Cadastro</button>
     </div>
-    <button type="submit" id="button-container__button-sign-up">Cadastro</button>
-  </div>
+  </form>
 </dialog>
