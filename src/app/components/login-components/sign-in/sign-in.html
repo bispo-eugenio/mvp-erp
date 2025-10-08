@@ -1,3 +1,8 @@
+@if(this.infoForms.length !== 0){
+  <div class="status-forms">{{this.infoForms}}</div>
+} @else {
+  <div class="status-forms invisible"></div>
+}
 <dialog open class="d-flex flex-column gap-5 user-select-none" id="dialog-container" tabindex="-1">
   <form class="d-flex flex-column justify-content-center align-items-center" id="inputs-form">
     <input type="text" name="email" id="inputs-form__email" placeholder="email" [(ngModel)]="this.user.email">

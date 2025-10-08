@@ -11,7 +11,6 @@ import { SignUp } from "../sign-up/sign-up";
 export class LoginPage implements OnInit {
   ngOnInit(): void {
     this.startChecked()
-
   }  
 
   flagChecked(): boolean {

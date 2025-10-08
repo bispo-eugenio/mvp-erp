@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Login } from '../../../services/login';
 import { FormsModule } from "@angular/forms"
 import { CommonModule } from '@angular/common';
+import { Auth } from '../../../services/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,21 +13,29 @@ import { CommonModule } from '@angular/common';
 })
 export class SignIn {
 
-  constructor(private serviceLogin: Login){}
- 
+  constructor(private loginService: Auth, private router: Router) { }
+
   user = {
     email: "",
     password: ""
   }
-  
+
+  infoForms = "";
+
   signIn(): void {
-    const collection = this.serviceLogin.getRegister("user")
-    if(collection != null) { 
-      for(let index of collection) {
-        let itemString = JSON.stringify(index);
-        let itemJson = JSON.parse(itemString);
-        (this.user.email == itemJson["email"] && this.user.password == itemJson["password"]) ? console.log("Logou") : console.log("senha ou/e email incorreto")
-      }
+    if (this.user.email === "" || this.user.password === "") {
+      console.log(this.user)
+      this.infoForms = "Preecha os campos faltantes."
+      return
     }
+    if (this.loginService.login(this.user)) {
+      this.infoForms = "Login bem-sucedido!"
+      this.router.navigate(["/dashboard"])
+    }
+    else {
+      this.infoForms = "E-mail ou/e senha inválido(s)."
+      return
+    }
+
   }
 }

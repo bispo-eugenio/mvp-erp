@@ -1,3 +1,8 @@
+@if(this.infoForms.length !== 0){
+  <div class="status-forms">{{this.infoForms}}</div>
+} @else {
+  <div class="status-forms invisible"></div>
+}
 <dialog open class="d-flex flex-column user-select-none" id="dialog-container" tabindex="-1">
   <!-- Forms para cadastro -->
   <form class="d-flex flex-column justify-content-center align-items-center" id="inputs-form">
@@ -12,7 +17,8 @@
     <div class="d-flex flex-column gap-2 mt-4" id="button-container">
       <div id="terms-container" class="d-flex gap-1">
         <input type="checkbox" name="privacy-terms" id="button-container__terms">
-        <label for="button-container__terms" id="button-container__text-terms">Você concorda com nossos <a href="#">termos de privacidade</a>.</label>
+        <label for="button-container__terms" id="button-container__text-terms">Você concorda com nossos <a
+            href="#">termos de privacidade</a>.</label>
       </div>
       <button type="submit" id="button-container__button-sign-up" (click)="signUp()">Cadastro</button>
     </div>
