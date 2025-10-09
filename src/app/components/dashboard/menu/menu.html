@@ -1,0 +1,67 @@
+<input type="checkbox" id="hamburger-container" class="d-none">
+<label for="hamburger-container" class="hamburger-container__label d-none">
+    <img src="/dist/assets/img/MENU.svg" alt="menu-hamburger">
+</label>
+<aside class="aside-container d-flex flex-column justify-content-between position-relative">
+    <label for="hamburger-container" class="hamburger-container__label-close position-absolute">
+        <ion-icon name="close-outline"></ion-icon>
+    </label>
+    <div class="menu-container__box-image">
+        <img src="/dist/assets/img/LOGO.svg" alt="Logo do site">
+    </div>
+    <nav class="nav-container d-flex flex-column">
+        <ul class="nav-container__list list-unstyled d-flex flex-column">
+            <strong class="nav-container__title d-flex align-items-center">
+                <ion-icon name="hammer-outline"></ion-icon>
+                <span>Estoque</span>
+            </strong>
+            <li class="nav-container__item active btn">
+                <a routerLink="#" class="nav-container__link">
+                    <span class="nav-container__icon"><ion-icon name="grid-outline"></ion-icon></span>
+                    <span class="nav-container__name-item">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-container__item btn">
+                <a routerLink="#" class="nav-container__link">
+                    <span class="nav-container__icon"><ion-icon name="people-outline"></ion-icon></span>
+                    <span class="nav-container__name-item">Cliente</span>
+                </a>
+            </li>
+            <li class="nav-container__item btn">
+                <a routerLink="#" class="nav-container__link">
+                    <span class="nav-container__icon"><ion-icon name="cube-outline"></ion-icon></span>
+                    <span class="nav-container__name-item">Produto</span>
+                </a>
+            </li>
+            <li class="nav-container__item btn">
+                <a routerLink="#" class="nav-container__link">
+                    <span class="nav-container__icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
+                    <span class="nav-container__name-item">Movimentação</span>
+                </a>
+            </li>
+            <li class="nav-container__item btn">
+                <a routerLink="#" class="nav-container__link">
+                    <span class="nav-container__icon"><ion-icon name="reader-outline"></ion-icon>
+                    </span>
+                    <span class="nav-container__name-item">Relatório</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <hr class="m-1" style="color: var(--floral-white) !important;">
+    <ul class="list-container list-unstyled d-flex flex-column gap-2 mt-3">
+        <li class="list-container__item btn">
+            <a href="#" class="list-container__link">
+                <span class="list-container__icon"><ion-icon name="settings-outline"></ion-icon></span>
+                <span class="list-container__name-item">Configurações</span>
+            </a>
+        </li>
+        <li class="list-container__item btn">
+            <a href="#" class="list-container__link">
+                <span class="list-container__icon"><ion-icon name="log-out-outline"></ion-icon>
+                </span>
+                <span class="list-container__name-item">Sair</span>
+            </a>
+        </li>
+    </ul>
+</aside>

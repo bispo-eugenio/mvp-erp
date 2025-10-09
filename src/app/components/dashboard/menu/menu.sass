@@ -1,0 +1,157 @@
+.hamburger-container__label
+    display: none !important
+    user-select: none
+    position: absolute
+    inset: 0
+    width: 35px
+    height: 35px
+    justify-content: center
+    align-items: center
+    margin: 0.5rem
+    background-color: var(--space-cadet)
+    border-radius: 6px
+    img
+        pointer-events: none
+        user-select: none
+
+        &:hover
+            background-color: var(--space-cadet-active)
+.hamburger-container__label-close
+    display: none !important
+    z-index: 11
+    left: 85%
+    right: 0%
+    top: 1%
+    bottom: 100%
+    ion-icon
+        font-size: 2rem
+        color: var(--floral-white)
+        width: 25px
+        height: 25px
+        border-radius: 6px
+        &:hover
+            background-color: var(--space-cadet)
+            color: var(--floral-white-hover)
+            &:active
+                background-color: var(--tifanny-blue)
+.aside-container
+    background-color: var(--space-cadet-active)
+    min-width: 200px
+    width: 100%
+    height: 100vh
+
+.menu-container__box-image
+    width: 100%
+    height: 90px
+    display: flex
+    user-select: none
+    pointer-events: none
+    img
+        user-select: none
+        width: 100%
+        height: 100%
+
+.nav-container
+    height: 100%
+    margin: 0 !important
+
+.nav-container__list
+    height: 100%
+    margin: 0 !important
+
+    .nav-container__title
+        gap: 0.25rem
+        padding-left: 0.5rem
+        margin: 2rem 0 0.5rem 0
+        user-select: none
+        span, ion-icon
+            color: var(--bs-gray-600)
+
+    .nav-container__item
+        display: flex
+        text-align: start
+        margin: 1rem 0.5rem
+        span, ion-icon
+            color: var(--floral-white)
+        &:hover
+            background-color: var(--space-cadet)
+            transition: 200ms ease
+        &:active
+            background-color: var(--tifanny-blue)
+            span
+                color: var(--space-cadet)
+                transition: 300ms ease-out
+            ion-icon
+                color: var(--space-cadet)
+                transition: 300ms ease-out
+
+    .nav-container__link
+        width: 100%
+        display: flex
+        justify-content: center
+        gap: 0.25rem
+    .nav-container__icon
+        display: flex
+        justify-content: center
+        align-items: center
+li.active
+    background-color: var(--tifanny-blue) !important
+    span, ion-icon
+        color: var(--space-cadet) !important
+
+.list-container
+    margin: 0.5rem
+    .list-container__item
+        span, ion-icon
+            color: var(--floral-white)
+        .list-container__link
+            gap: 0.25rem
+            display: flex
+            justify-content: center
+            align-items: center
+        .list-container__icon
+            display: flex
+            justify-content: center
+            align-items: center
+
+        &:hover
+            background-color: var(--space-cadet)
+            transition: 200ms ease
+
+        &:active
+            background-color: var(--tifanny-blue)
+            // transition: 300ms ease-out
+            span
+                color: var(--space-cadet)
+            ion-icon
+                color: var(--space-cadet)
+
+@media screen and (max-height: 768px)
+    .nav-container__title span
+        font-size: 75%
+    .nav-container__name-item, .list-container__name-item
+        font-size: 75%
+
+@media screen and (max-width: 1024px)
+    .hamburger-container__label-close
+        display: block !important
+
+    .aside-container
+        height: 100vh
+        transform: translateX(-200px)
+        z-index: 10
+        transition: 300ms ease-out
+    .hamburger-container__label
+        display: flex !important
+    #hamburger-container:checked ~ .aside-container
+        transform: translateX(0)
+        position: relative
+        box-shadow: 5px 5px 10px #00000050
+        transition: 300ms ease-in
+
+    .nav-container__title
+        margin: 1rem 0 0.5rem 0 !important
+
+*
+    // outline: 1px solid red
+    // color: var(--floral-white)
