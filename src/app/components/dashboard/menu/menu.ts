@@ -6,13 +6,13 @@ import {
   hammerOutline,
   settingsOutline,
   logOutOutline,
-  readerOutline,
   swapHorizontalOutline,
   gridOutline,
   peopleOutline,
   cubeOutline,
   closeOutline,
 } from 'ionicons/icons';
+import { Auth } from '../../../services/auth';
 
 @Component({
   selector: 'app-menu',
@@ -22,7 +22,7 @@ import {
 })
 export class Menu implements AfterContentInit {
 
-  constructor(private dashboardService: Dashboard) {
+  constructor(private dashboardService: Dashboard, private authService: Auth) {
     //Adiciona icons pela bibliotéca
     addIcons({
       hammerOutline, //Estoque
@@ -30,7 +30,6 @@ export class Menu implements AfterContentInit {
       peopleOutline, //Cliente
       cubeOutline, //Produto
       swapHorizontalOutline, //Transação
-      readerOutline, //Relatório
       settingsOutline, //Configurações
       logOutOutline, // Deslogar
       closeOutline //Close
@@ -51,6 +50,10 @@ export class Menu implements AfterContentInit {
 
   eventClick(num: number): void {
     this.dashboardService.switchNum(num)
+  }
+
+  logout():void {
+    this.authService.logout()
   }
   
 }

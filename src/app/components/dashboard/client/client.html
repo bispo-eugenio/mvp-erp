@@ -1,40 +1,48 @@
 <section class="client-forms-container">
     <dialog class="client-forms-container__info position-absolute">
         <div class="position-relative">
-            <div class="client-forms-container__close-modal position-absolute" (click)="dialogSwitch(false)">
+            <div class="client-forms-container__close-modal position-absolute" (click)="dialogInfoSwitch(false)">
                 <ion-icon name="close-outline"></ion-icon>
             </div>
             <h3>Falha no Formulário</h3>
             <p>{{this.describeDialog}}</p>
         </div>
     </dialog>
+    <dialog class="client-forms-container__delete position-absolute">
+        <div class="client-forms-container__delete-close-modal position-absolute" (click)="dialogDeleteSwitch(false)">
+            <ion-icon name="close-outline"></ion-icon>
+        </div>
+        <small>Descrição: apaga por id do cliente</small>
+        <input type="number" class="client-forms-container__delete-input" placeholder="Ex: 999999" id="delete-input">
+        <button class="client-forms-container__delete-button" (click)="this.deleteClient()">deletar</button>
+    </dialog>
     <div>
         <div class="w-100 d-flex justify-content-center">
             <h2 class="client-forms-container__title p-3">Cadastro de Cliente</h2>
         </div>
-        <form class="forms-container d-flex justify-content-evenly align-items-center flex-wrap">
+        <form class="forms-container d-flex justify-content-evenly align-items-center flex-wrap mx-2">
             <div class="forms-container__box">
                 <div class="forms-container__item">
                     <ion-icon name="person-outline"></ion-icon>
-                    <input type="text" placeholder="Nome" name="name" class="forms-container__input forms-container__name"
-                        [(ngModel)]="client.name">
+                    <input type="text" placeholder="Nome" name="name"
+                        class="forms-container__input forms-container__name" [(ngModel)]="client.name">
                 </div>
                 <div class="forms-container__item">
                     <ion-icon name="business-outline"></ion-icon>
-                    <input type="text" placeholder="cnpj" name="cnpj" class="forms-container__input forms-container__cnpj"
-                        [(ngModel)]="client.cnpj">
+                    <input type="text" placeholder="cnpj" name="cnpj"
+                        class="forms-container__input forms-container__cnpj" [(ngModel)]="client.cnpj">
                 </div>
             </div>
             <div class="forms-container__box">
                 <div class="forms-container__item">
                     <ion-icon name="call-outline"></ion-icon>
-                    <input type="text" placeholder="Telefone" name="phone" class="forms-container__input forms-container__phone"
-                        [(ngModel)]="client.phone">
+                    <input type="text" placeholder="Telefone" name="phone"
+                        class="forms-container__input forms-container__phone" [(ngModel)]="client.phone">
                 </div>
                 <div class="forms-container__item">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input type="text" placeholder="Email" name="email" class="forms-container__input forms-container__email"
-                        [(ngModel)]="client.email">
+                    <input type="text" placeholder="Email" name="email"
+                        class="forms-container__input forms-container__email" [(ngModel)]="client.email">
                 </div>
             </div>
             <div class="forms-container__box">
@@ -48,11 +56,16 @@
                 </div>
             </div>
         </form>
+        <div class="forms-container__box d-flex justify-content-center">
+            <div class="forms-container__box-button  box-button-delete">
+                <button class="forms-container__button" (click)="this.dialogDeleteSwitch(true)">deletar</button>
+            </div>
+        </div>
         <div>
             <h3 class="ms-4 mt-3">Clientes</h3>
         </div>
         <div
-            class="client-forms-container__client-box d-flex flex-wrap justify-content-evenly overflow-y-auto gap-2 p-2">
+            class="client-forms-container__client-box d-flex flex-wrap justify-content-evenly overflow-y-auto gap-2 p-2 mb-2">
             @if(this.showClientCollection.length !== 0){
             @for(client of this.showClientCollection; track client.id){
             <app-client-card [name]="client.name" [id]="client.id" [cnpj]="client.cnpj" [phone]="client.phone"
@@ -63,5 +76,4 @@
             }
         </div>
     </div>
-    <div></div>
 </section>

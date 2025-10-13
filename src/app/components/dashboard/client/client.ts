@@ -3,7 +3,8 @@ import { addIcons } from 'ionicons'
 import { IonIcon } from '@ionic/angular/standalone';
 import {
   businessOutline, callOutline, closeOutline, mailOutline,
-  mapOutline, personOutline
+  mapOutline, personOutline,
+  ticketOutline
 } from 'ionicons/icons';
 import { ClientCard } from "../client-card/client-card";
 import { CommonModule } from '@angular/common';
@@ -26,7 +27,8 @@ export class Client implements OnInit {
       mapOutline,
       callOutline,
       mailOutline,
-      closeOutline
+      closeOutline,
+      ticketOutline
     })
   }
 
@@ -52,11 +54,11 @@ export class Client implements OnInit {
   clientCollection: ClientInterface[] = [];
   showClientCollection: ClientInterface[] = [];
   listId: string[] = [];
-  describeDialog:string =  "";
+  describeDialog: string = "";
 
   registerClient(): void {
     if (!this.clientService.validedClientForms()) {
-      this.dialogSwitch(true)
+      this.dialogInfoSwitch(true)
       this.describeDialog = this.clientService.validedClientFormsText()
     }
     else {
@@ -68,12 +70,12 @@ export class Client implements OnInit {
         email: this.client.email,
         cep: this.client.cep,
       }
-      if(this.validedClient(newClient)){
-        this.dialogSwitch(true)
+      if (this.validedClient(newClient)) {
+        this.dialogInfoSwitch(true)
         this.describeDialog = "E-mail ou/e cnpj cadastrado(s)"
         return
       }
-      this.listId.push(this.client.id)  
+      this.listId.push(this.client.id)
       this.clientCollection.push(newClient)
       this.dashboardService.setItem("client", this.clientCollection);
       const dataClient = this.getRegisterClient()
@@ -82,12 +84,30 @@ export class Client implements OnInit {
     }
   }
 
+  deleteClient(): void {
+    const input = document.querySelector(".client-forms-container__delete-input") as HTMLInputElement;
+    const dataClientCollection = this.getRegisterClient();
+    if (dataClientCollection) {
+      let data = JSON.parse(dataClientCollection);
+      for (let index = 0; index < data.length; index++) {
+        if (data[index]["id"] === input.value) {
+          this.clientCollection.splice(index, 1)
+          data.splice(index, 1);
+          this.dashboardService.setItem("client", data)
+          let getDataClient = this.getRegisterClient();
+          if (getDataClient)
+            this.showClientCollection = JSON.parse(getDataClient);
+        }
+      }
+    }
+  }
+
   validedClient(client: ClientInterface): boolean {
     const clientCollection = this.getRegisterClient();
-    if(clientCollection){
+    if (clientCollection) {
       const clients = JSON.parse(clientCollection);
-      for(let clientIndex of clients){
-        if(client["cnpj"] === clientIndex["cnpj"] || client["email"] === clientIndex["email"])
+      for (let clientIndex of clients) {
+        if (client["cnpj"] === clientIndex["cnpj"] || client["email"] === clientIndex["email"])
           return true
       }
     }
@@ -109,10 +129,14 @@ export class Client implements OnInit {
     return randomNum;
   }
 
-  dialogSwitch(flag: boolean): void {
+  dialogInfoSwitch(flag: boolean): void {
     const dialog = document.querySelector(".client-forms-container__info") as HTMLDialogElement
     dialog.open = flag
   }
-  
+
+  dialogDeleteSwitch(flag: boolean): void {
+    const dialog = document.querySelector(".client-forms-container__delete") as HTMLDialogElement
+    dialog.open = flag
+  }
 
 }

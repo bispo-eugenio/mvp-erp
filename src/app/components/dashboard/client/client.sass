@@ -1,6 +1,3 @@
-*
-    // outline: 1px solid red
-
 @mixin use-d-flex($direction, $justify: center)
     display: flex
     flex-direction: $direction
@@ -50,23 +47,25 @@
         @include use-d-flex(row)
         width: 100%
         height: 50px
-        .forms-container__button
-            font-size: 1.2rem
-            width: 100%
-            height: 50px
-            border: 1px solid transparent
-            border-radius: 8px
-            background-color: var(--space-cadet-active)
-            color: var(--floral-white)
-            transition: 300ms ease
+.forms-container__button, .client-forms-container__delete-button
+    font-size: 1.2rem
+    border: 1px solid transparent
+    border-radius: 8px
+    background-color: var(--space-cadet-active)
+    color: var(--floral-white)
+    transition: 300ms ease
 
-            &:hover
-                background-color: var(--space-cadet)
-                transition: 300ms ease-out
-            &:active
-                background-color: var(--tifanny-blue)
-                color: var(--space-cadet)
-                transition: 150ms ease-in
+    &:hover
+        background-color: var(--space-cadet)
+        transition: 300ms ease-out
+    &:active
+        background-color: var(--tifanny-blue)
+        color: var(--space-cadet)
+        transition: 150ms ease-in
+
+.box-button-delete
+    width: 250px
+    margin: 0.5rem auto
 
 .client-forms-container__client-box
     min-height: 100px
@@ -84,16 +83,15 @@
         background-color: var(--space-cadet-active)
     &::-webkit-scrollbar
         width: 12px
+.forms-container__button
+    width: 100%
+    height: 50px
 
-.client-forms-container__info
-    z-index: 1
+.client-forms-container__info, .client-forms-container__delete
+
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
-    width: 300px
-    height: auto
-    max-height: 170px
-    font-size: 2.5rem
     padding: 0.25rem 1.5rem
     border: 2px solid var(--space-cadet)
     border-radius: 8px
@@ -105,7 +103,7 @@
     h3
         font-size: 1.5rem
 
-    .client-forms-container__close-modal
+    .client-forms-container__close-modal, .client-forms-container__delete-close-modal
         z-index: 20
         cursor: pointer
         display: flex
@@ -127,9 +125,50 @@
             background-color: var(--tifanny-blue-active)
             transition: 200ms ease-in
 
+.client-forms-container__delete
+    z-index: 2
+    width: 300px
+    height: 250px
+
+    .client-forms-container__delete-close-modal
+        top: 1%
+        left: 92%
+        right: 0%
+    .client-forms-container__delete-input, .client-forms-container__delete-button, small
+        position: absolute
+        left: 50%
+        transform: translate(-50%,-50%)
+    small
+        text-align: center
+        width: 100%
+        top: 30%
+    .client-forms-container__delete-button
+        width: 200px
+        height: 45px
+        top: 75%
+
+    .client-forms-container__delete-input
+        top: 50%
+        height: 40px !important
+        border: 1px solid var(--space-cadet)
+        border-radius: 6px
+        padding: 0 0.25rem
+        &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+            -webkit-appearance: none
+.client-forms-container__info
+    z-index: 1
+    width: 300px
+    height: auto
+    max-height: 170px
+    font-size: 2.5rem
 @media screen and (max-width: 1024px)
     .client-forms-container
         overflow-y: scroll
 @media screen and (max-width: 440px)
     .forms-container
         gap: 1rem
+    .box-button-delete
+        margin: 0.5rem 1rem
+
+*
+    // outline: 1px solid red

@@ -1,1 +1,57 @@
-<p>transaction works!</p>
+<section class="transaction-forms-container">
+    <dialog class="transaction-forms-container__info position-absolute">
+        <div class="position-relative">
+            <div class="transaction-forms-container__close-modal position-absolute">
+                <!-- <ion-icon name="close-outline"></ion-icon> -->
+            </div>
+            <h3>Falha no Formulário</h3>
+            <p></p>
+        </div>
+    </dialog>
+    <div>
+        <div class="w-100 d-flex justify-content-center">
+            <h2 class="transaction-forms-container__title p-3">Movimentação</h2>
+        </div>
+        <form class="forms-container d-flex justify-content-evenly align-items-center flex-wrap">
+            <div class="forms-container__box">
+                <div class="forms-container__item">
+                    <ion-icon name="cube-outline"></ion-icon>
+                    <!-- Mudar para um select -->
+                    <input type="text" placeholder="Nome" name="name"
+                        class="forms-container__input forms-container__name">
+                </div>
+                <div class="forms-container__item">
+                    <ion-icon name="server-outline"></ion-icon>
+                    <input type="text" placeholder="Quantidade" name="quantity"
+                        class="forms-container__input forms-container__quantity">
+                </div>
+            </div>
+            <div class="forms-container__box">
+                <div class="forms-container__item">
+                    <ion-icon name="layers-outline"></ion-icon>
+                    <select name="type" id="fomrs-container__select" class="forms-container__input" >
+                        <option selected disabled>Tipo de Movimentação</option>
+                        <option>Devolução</option>
+                        <option>Vendas</option>
+                        <option>Reabastecer</option>
+                    </select>
+                </div>
+                <div class="forms-container__item">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" placeholder="Quantidade" name="quantity"
+                    class="forms-container__input forms-container__cep">
+                </div>
+            </div>
+            <div class="forms-container__box-button">
+                <button class="forms-container__button">cadastrar</button>
+                <button class="forms-container__button">deletar</button>
+            </div>
+        </form>
+        <div>
+            <h3 class="ms-4 mt-3">Movimentação</h3>
+        </div>
+        <div
+            class="transaction-forms-container__transaction-box d-flex flex-wrap justify-content-evenly overflow-y-auto gap-2 p-2 m-2">
+        </div>
+    </div>
+</section>

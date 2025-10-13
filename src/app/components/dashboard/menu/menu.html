@@ -22,28 +22,21 @@
                 </div>
             </li>
             <li class="nav-container__item btn" (click)="eventClick(1)">
-                <div class="nav-container__link" >
+                <div class="nav-container__link">
                     <span class="nav-container__icon"><ion-icon name="people-outline"></ion-icon></span>
                     <span class="nav-container__name-item">Cliente</span>
                 </div>
             </li>
             <li class="nav-container__item btn" (click)="eventClick(2)">
-                <div class="nav-container__link" >
+                <div class="nav-container__link">
                     <span class="nav-container__icon"><ion-icon name="cube-outline"></ion-icon></span>
                     <span class="nav-container__name-item">Produto</span>
                 </div>
             </li>
             <li class="nav-container__item btn" (click)="eventClick(3)">
-                <div class="nav-container__link" >
+                <div class="nav-container__link">
                     <span class="nav-container__icon"><ion-icon name="swap-horizontal-outline"></ion-icon></span>
                     <span class="nav-container__name-item">Movimentação</span>
-                </div>
-            </li>
-            <li class="nav-container__item btn" (click)="eventClick(4)">
-                <div class="nav-container__link" >
-                    <span class="nav-container__icon"><ion-icon name="reader-outline"></ion-icon>
-                    </span>
-                    <span class="nav-container__name-item">Relatório</span>
                 </div>
             </li>
         </ul>
@@ -51,17 +44,17 @@
     <hr class="m-1" style="color: var(--floral-white) !important;">
     <ul class="list-container list-unstyled d-flex flex-column gap-2 mt-3">
         <li class="list-container__item btn">
-            <a href="#" class="list-container__link">
+            <div class="list-container__link">
                 <span class="list-container__icon"><ion-icon name="settings-outline"></ion-icon></span>
                 <span class="list-container__name-item">Configurações</span>
-            </a>
+            </div>
         </li>
         <li class="list-container__item btn">
-            <a href="#" class="list-container__link">
+            <div class="list-container__link" (click)="this.logout()">
                 <span class="list-container__icon"><ion-icon name="log-out-outline"></ion-icon>
                 </span>
                 <span class="list-container__name-item">Sair</span>
-            </a>
+            </div>
         </li>
     </ul>
 </aside>
