@@ -7,7 +7,6 @@ interface User {
     password: string,
     telefone?: string,
     endereco?: Endereco,
-    services?: []
 }
 
 interface Endereco {

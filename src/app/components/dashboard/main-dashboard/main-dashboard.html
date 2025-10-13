@@ -1,0 +1,20 @@
+<section class="main-dashboard-container container-fluid">
+    <h2 class="main-dashboard-container__title mx-2 mt-4">Olá, {{this.name}}</h2>
+    <hr class="mb-5">
+    <div class="main-dashboard-container__box-status d-flex justify-content-evenly flex-wrap gap-3">
+        <app-status></app-status>
+        <app-status></app-status>
+        <app-status></app-status>
+        <app-status></app-status>
+    </div>
+    <h3 class="my-3">Monitoramento</h3>
+    <div class="main-dashboard-container__box-card d-flex flex-wrap gap-2 justify-content-around">
+        <app-card-dashboard></app-card-dashboard>
+        <app-card-dashboard></app-card-dashboard>
+        <app-card-dashboard></app-card-dashboard>
+    </div>
+    <h3 class="my-3">Alerta</h3>
+    <div class="main-dashboard-container__box-alert">
+        <app-alert-list></app-alert-list>
+    </div>
+</section>

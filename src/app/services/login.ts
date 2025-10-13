@@ -8,13 +8,13 @@ export class Login {
   users: Users = []
 
   getRegister(key: string): string | null {
-    const items = sessionStorage.getItem(key);
+    const items = localStorage.getItem(key);
     return items ? JSON.parse(items) : null;
   }
 
   setRegister(key: string, item: User): void {
     this.users.push(item);
-    sessionStorage.setItem(key, JSON.stringify(this.users));
+    localStorage.setItem(key, JSON.stringify(this.users));
   }
 
   validedForms(): boolean {

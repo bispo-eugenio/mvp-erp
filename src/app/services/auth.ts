@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Login } from './login';
 
 const USER_KEY = "auth-user";
@@ -19,7 +18,7 @@ export class Auth {
         let itemString = JSON.stringify(index);
         let itemJson = JSON.parse(itemString);
         if(user.email == itemJson["email"] && user.password == itemJson["password"]){
-          sessionStorage.setItem(USER_KEY, itemJson);
+          sessionStorage.setItem(USER_KEY, JSON.stringify(itemJson));
           return true;
         }
         }
@@ -27,10 +26,15 @@ export class Auth {
     return false;
   }
 
+  getAuthLogin(): string | null {
+    return sessionStorage.getItem(USER_KEY)
+  }
+
   logout():void {
     sessionStorage.removeItem(USER_KEY);
     this.router.navigate(["/login"]);
   }
+
 
   isLoggedIn():boolean {
     const user = sessionStorage.getItem(USER_KEY);

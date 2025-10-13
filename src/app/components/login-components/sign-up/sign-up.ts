@@ -28,11 +28,17 @@ export class SignUp implements OnInit {
   
   
   signUp(): void {
+    const newUser: User = {
+      email: this.user.email,
+      name: this.user.name,
+      cnpj: this.user.cnpj,
+      password: this.user.password
+    }
     const fomrSignUp = document.getElementById("inputs-form") as HTMLFormElement;
     this.infoForms = this.serviceLogin.infoFormsValueSignUp()
     // Se for valido, cadastra
     if(this.serviceLogin.validedForms()){
-      this.serviceLogin.setRegister("user", this.user);
+      this.serviceLogin.setRegister("user", newUser);
       fomrSignUp.reset();
     }
   }

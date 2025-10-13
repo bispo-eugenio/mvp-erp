@@ -1,4 +1,5 @@
 .hamburger-container__label
+    cursor: pointer
     display: none !important
     user-select: none
     position: absolute
@@ -17,6 +18,7 @@
         &:hover
             background-color: var(--space-cadet-active)
 .hamburger-container__label-close
+    cursor: pointer
     display: none !important
     z-index: 11
     left: 85%
@@ -137,6 +139,7 @@ li.active
         display: block !important
 
     .aside-container
+        width: auto
         height: 100vh
         transform: translateX(-200px)
         z-index: 10
@@ -151,7 +154,3 @@ li.active
 
     .nav-container__title
         margin: 1rem 0 0.5rem 0 !important
-
-*
-    // outline: 1px solid red
-    // color: var(--floral-white)

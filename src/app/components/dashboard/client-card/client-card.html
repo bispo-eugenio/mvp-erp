@@ -1,0 +1,15 @@
+<article class="client-card">
+    <div class="client-card__box-header d-flex justify-content-between align-items-center gap-3">
+        <ion-icon name="person-outline"></ion-icon>
+        <div class="client-card__box-title d-flex">
+            <h5 class="client-card__name">{{this.name()}}</h5>
+            <small class="client-card__id">{{this.id()}}</small>
+        </div>
+    </div>
+    <div class="client-card__box-data">
+        <p class="client-card__cnpj">cnpj: <span>{{this.cnpj()}}</span></p>
+        <p class="client-card__email">e-mail: <span>{{this.email()}}</span></p>
+        <p class="client-card__phone">tel: <span>{{this.phone()}}</span></p>
+        <p class="client-card__cep">cep: <span>{{this.cep()}}</span></p>
+    </div>
+</article>

@@ -1,5 +1,5 @@
 import { AfterContentInit, Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Dashboard } from '../../../services/dashboard';
 import { IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import {
@@ -16,13 +16,13 @@ import {
 
 @Component({
   selector: 'app-menu',
-  imports: [IonIcon, RouterLink],
+  imports: [IonIcon],
   templateUrl: './menu.html',
   styleUrl: './menu.sass'
 })
 export class Menu implements AfterContentInit {
 
-  constructor() {
+  constructor(private dashboardService: Dashboard) {
     //Adiciona icons pela bibliotéca
     addIcons({
       hammerOutline, //Estoque
@@ -47,6 +47,10 @@ export class Menu implements AfterContentInit {
         item.classList.add("active");
       })
     })
+  }
+
+  eventClick(num: number): void {
+    this.dashboardService.switchNum(num)
   }
   
 }

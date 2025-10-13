@@ -1,3 +1,38 @@
 <main class="dashboard-page-container d-flex">
-    <app-menu></app-menu>
+   <div class="dashboard-page-container__menu">
+     <app-menu></app-menu>
+   </div>
+    @switch (receiver()) {
+    @case(0){
+    <div class="w-100 ">
+        <app-main-dashboard></app-main-dashboard>
+    </div>
+    }
+    @case(1){
+    <div class="w-100">
+        <app-client></app-client>
+    </div>
+    }
+    @case(2){
+    <div class="w-100">
+        <app-product></app-product>
+    </div>
+    }
+    @case(3){
+    <div class="w-100">
+        <app-transaction></app-transaction>
+    </div>
+    }
+    @case(4){
+    <div class="w-100">
+        <app-report></app-report>
+    </div>
+    }
+    @default {
+    <div class="w-100">
+        <app-main-dashboard></app-main-dashboard>
+    </div>
+    }
+
+    }
 </main>
