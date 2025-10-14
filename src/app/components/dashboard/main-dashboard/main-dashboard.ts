@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Status } from "../status/status";
 import { CardDashboard } from "../card-dashboard/card-dashboard";
-import { AlertList } from '../alert-list/alert-list';
 import { Auth } from '../../../services/auth';
+import { MainDashboardService } from '../../../services/main-dashboard-service';
 
 @Component({
   selector: 'app-main-dashboard',
-  imports: [Status, CardDashboard, AlertList],
+  imports: [Status, CardDashboard],
   templateUrl: './main-dashboard.html',
   styleUrl: './main-dashboard.sass'
 })
 export class MainDashboard implements OnInit {
 
-  constructor(private authService: Auth) { }
+  constructor(private authService: Auth, private mainService: MainDashboardService) { }
 
   user: string | null = null
   name: string = "";
@@ -31,6 +31,14 @@ export class MainDashboard implements OnInit {
     else {
       this.name = "Desconhecido"
     }
+
+    this.refund = this.mainService.getQuantityTransaction("Devolução");
+    this.sold = this.mainService.getQuantityTransaction("Vendas");
+    this.storage = this.mainService.getQuantityProduct();
   }
+
+  refund = 0;
+  sold = 0;
+  storage = 0;
 
 }

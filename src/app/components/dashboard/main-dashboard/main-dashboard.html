@@ -1,20 +1,15 @@
 <section class="main-dashboard-container container-fluid">
     <h2 class="main-dashboard-container__title mx-2 mt-4">Olá, {{this.name}}</h2>
     <hr class="mb-5">
-    <div class="main-dashboard-container__box-status d-flex justify-content-evenly flex-wrap gap-3">
-        <app-status></app-status>
-        <app-status></app-status>
-        <app-status></app-status>
-        <app-status></app-status>
+    <div class="main-dashboard-container__box-status d-flex justify-content-evenly flex-wrap gap-3 mb-5">
+        <app-status icon="cash-outline" name="Vendidos" [status]="this.sold"></app-status>
+        <app-status icon="bag-check-outline" name="Estoque" [status]="this.storage"></app-status>
+        <app-status icon="calculator-outline" name="Devolução" [status]="this.refund"></app-status>
     </div>
     <h3 class="my-3">Monitoramento</h3>
-    <div class="main-dashboard-container__box-card d-flex flex-wrap gap-2 justify-content-around">
+    <div class="main-dashboard-container__box-card d-flex flex-wrap gap-2 justify-content-around mb-2">
         <app-card-dashboard></app-card-dashboard>
         <app-card-dashboard></app-card-dashboard>
         <app-card-dashboard></app-card-dashboard>
-    </div>
-    <h3 class="my-3">Alerta</h3>
-    <div class="main-dashboard-container__box-alert">
-        <app-alert-list></app-alert-list>
     </div>
 </section>

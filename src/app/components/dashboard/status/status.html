@@ -1,7 +1,7 @@
 <div class="status-container d-flex align-items-center gap-3">
-    <ion-icon name="copy-outline"></ion-icon>
+    <ion-icon [name]="this.icon()"></ion-icon>
     <div class="status-container__box d-flex flex-column">
-        <h5 class="status-container__title">Lucro</h5>
-        <h4 class="status-container__value">4</h4>
+        <h5 class="status-container__title">{{this.name()}}</h5>
+        <h4 class="status-container__value">{{this.status()}}</h4>
     </div>
 </div>

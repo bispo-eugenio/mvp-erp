@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { bagCheckOutline, calculatorOutline, cashOutline, copyOutline, personAddOutline } from 'ionicons/icons';
@@ -19,4 +19,7 @@ export class Status {
       copyOutline
     })
   }
+  icon = input.required<string>()
+  name = input.required<string>()
+  status = input.required<string | number>()
 }

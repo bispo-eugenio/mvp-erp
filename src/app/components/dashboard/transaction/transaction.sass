@@ -40,9 +40,11 @@
     .forms-container__input
         width: 100%
         height: 100%
-        padding: 1.5rem 1.5rem 1.5rem 5px
+        padding: 1rem 1rem 1rem 5px
         border-start-end-radius: 8px
         border-end-end-radius: 8px
+        &::placeholder 
+            color: var(--space-cadet) !important
 
     .forms-container__box-button
         @include use-d-flex(row)
@@ -68,7 +70,8 @@
                 background-color: var(--tifanny-blue)
                 color: var(--space-cadet)
                 transition: 150ms ease-in
-
+.transaction-forms-container
+        overflow-y: scroll
 .transaction-forms-container__transaction-box
     min-height: 100px
     max-height: 400px

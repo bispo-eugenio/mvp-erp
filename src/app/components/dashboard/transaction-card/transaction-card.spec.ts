@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AlertList } from './alert-list';
+import { TransactionCard } from './transaction-card';
 
-describe('AlertList', () => {
-  let component: AlertList;
-  let fixture: ComponentFixture<AlertList>;
+describe('TransactionCard', () => {
+  let component: TransactionCard;
+  let fixture: ComponentFixture<TransactionCard>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AlertList]
+      imports: [TransactionCard]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AlertList);
+    fixture = TestBed.createComponent(TransactionCard);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

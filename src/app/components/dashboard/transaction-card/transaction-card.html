@@ -1,0 +1,14 @@
+<article class="transaction-card">
+    <div class="transaction-card__box-header d-flex justify-content-between align-items-center gap-3">
+        <ion-icon name="stats-chart-outline"></ion-icon>
+        <div class="transaction-card__box-title d-flex">
+            <h5 class="transaction-card__name">{{this.typeTransaction()}}</h5>
+            <small class="transaction-card__id">{{this.id()}}</small>
+        </div>
+    </div>
+    <div class="transaction-card__box-data">
+        <p class="transaction-card__phone">Cliente: <span>{{this.clientName()}}</span></p>
+        <p class="transaction-card__cnpj">Produto: <span>{{this.productName()}}</span></p>
+        <p class="transaction-card__email">Quantidade: <span>{{this.productQuantity()}}</span></p>
+    </div>
+</article>

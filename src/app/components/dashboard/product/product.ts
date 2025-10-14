@@ -103,7 +103,6 @@ export class Product implements OnInit {
           let getDataProduct = this.getRegisterProduct();
           if (getDataProduct)
             this.showProductCollection = JSON.parse(getDataProduct);
-          console.log(this.showProductCollection)
         }
       }
     }

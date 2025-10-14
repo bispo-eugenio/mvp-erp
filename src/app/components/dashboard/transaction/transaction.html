@@ -1,13 +1,4 @@
 <section class="transaction-forms-container">
-    <dialog class="transaction-forms-container__info position-absolute">
-        <div class="position-relative">
-            <div class="transaction-forms-container__close-modal position-absolute">
-                <!-- <ion-icon name="close-outline"></ion-icon> -->
-            </div>
-            <h3>Falha no Formulário</h3>
-            <p></p>
-        </div>
-    </dialog>
     <div>
         <div class="w-100 d-flex justify-content-center">
             <h2 class="transaction-forms-container__title p-3">Movimentação</h2>
@@ -17,19 +8,27 @@
                 <div class="forms-container__item">
                     <ion-icon name="cube-outline"></ion-icon>
                     <!-- Mudar para um select -->
-                    <input type="text" placeholder="Nome" name="name"
-                        class="forms-container__input forms-container__name">
+                    <select name="name" class="forms-container__input forms-container__name"
+                        [(ngModel)]="this.transaction.productName">
+                        @if(this.productCollection){
+                        @for(product of this.productCollection; track product.id){
+                        <option [value]="product.name">{{product.name}}</option>
+                        }
+                        }
+                    </select>
                 </div>
                 <div class="forms-container__item">
                     <ion-icon name="server-outline"></ion-icon>
                     <input type="text" placeholder="Quantidade" name="quantity"
-                        class="forms-container__input forms-container__quantity">
+                        class="forms-container__input forms-container__quantity"
+                        [(ngModel)]="this.transaction.productQuantity">
                 </div>
             </div>
             <div class="forms-container__box">
                 <div class="forms-container__item">
                     <ion-icon name="layers-outline"></ion-icon>
-                    <select name="type" id="fomrs-container__select" class="forms-container__input" >
+                    <select name="type" id="fomrs-container__select" class="forms-container__input"
+                        [(ngModel)]="this.transaction.typeTransaction">
                         <option selected disabled>Tipo de Movimentação</option>
                         <option>Devolução</option>
                         <option>Vendas</option>
@@ -38,13 +37,18 @@
                 </div>
                 <div class="forms-container__item">
                     <ion-icon name="person-outline"></ion-icon>
-                    <input type="text" placeholder="Quantidade" name="quantity"
-                    class="forms-container__input forms-container__cep">
+                    <select name="client" class="forms-container__input forms-container__client"
+                        [(ngModel)]="this.transaction.clientName">
+                        @if(this.clientCollection){
+                        @for(client of this.clientCollection; track client.id){
+                        <option [value]="client.name">{{client.name}}</option>
+                        }
+                        }
+                    </select>
                 </div>
             </div>
             <div class="forms-container__box-button">
-                <button class="forms-container__button">cadastrar</button>
-                <button class="forms-container__button">deletar</button>
+                <button class="forms-container__button" (click)="this.registerTransaction()">cadastrar</button>
             </div>
         </form>
         <div>
@@ -52,6 +56,13 @@
         </div>
         <div
             class="transaction-forms-container__transaction-box d-flex flex-wrap justify-content-evenly overflow-y-auto gap-2 p-2 m-2">
+            @if(this.showTransactionCollection.length !== 0){
+            @for(product of this.showTransactionCollection; track product.id){
+                <app-transaction-card [typeTransaction]="product.typeTransaction" [id]="product.id" [productName]="product.productName" [clientName]="product.clientName" [productQuantity]="product.productQuantity"></app-transaction-card>
+            }
+            } @else {
+            <h4 class="my-auto">Não há movimentação cadastrado.</h4>
+            }
         </div>
     </div>
 </section>
