@@ -42,31 +42,34 @@
         padding: 1.5rem 1.5rem 1.5rem 5px
         border-start-end-radius: 8px
         border-end-end-radius: 8px
+        &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+            -webkit-appearance: none
 
     .forms-container__box-button
         @include use-d-flex(row)
         width: 100%
         height: 50px
-        .forms-container__button
-            font-size: 1.2rem
-            max-width: 300px
-            margin: 0 1rem
-            width: 100%
-            min-width: none
-            height: 50px
-            border: 1px solid transparent
-            border-radius: 8px
-            background-color: var(--space-cadet-active)
-            color: var(--floral-white)
-            transition: 300ms ease
+.forms-container__button, .product-forms-container__delete-button
+    font-size: 1.2rem
+    max-width: 300px
+    margin: 0 1rem
+    width: 100%
+    min-width: none
+    height: 50px
+    border: 1px solid transparent
+    border-radius: 8px
+    background-color: var(--space-cadet-active)
+    color: var(--floral-white)
+    transition: 300ms ease
 
-            &:hover
-                background-color: var(--space-cadet)
-                transition: 300ms ease-out
-            &:active
-                background-color: var(--tifanny-blue)
-                color: var(--space-cadet)
-                transition: 150ms ease-in
+.forms-container__button
+    &:hover
+        background-color: var(--space-cadet)
+        transition: 300ms ease-out
+    &:active
+        background-color: var(--tifanny-blue)
+        color: var(--space-cadet)
+        transition: 150ms ease-in
 
 .product-forms-container__product-box
     min-height: 100px
@@ -85,7 +88,7 @@
     &::-webkit-scrollbar
         width: 12px
 
-.product-forms-container__info
+.product-forms-container__info, .product-forms-container__delete
     z-index: 1
     top: 50%
     left: 50%
@@ -105,7 +108,7 @@
     h3
         font-size: 1.5rem
 
-    .product-forms-container__close-modal
+    .product-forms-container__close-modal, .product-forms-container__delete-close-modal
         z-index: 20
         cursor: pointer
         display: flex
@@ -126,6 +129,45 @@
         &:active
             background-color: var(--tifanny-blue-active)
             transition: 200ms ease-in
+.product-forms-container__delete
+    z-index: 2
+    width: 300px
+    height: 250px
+    .product-forms-container__delete-close-modal
+        top: 1%
+        left: 92%
+        right: 0%
+    .product-forms-container__delete-input, .product-forms-container__delete-button, small
+        position: absolute
+        left: 50%
+        transform: translate(-50%,-50%) !important
+    small
+        font-size: 1rem
+        text-align: center
+        width: 100%
+        top: 25%
+    .product-forms-container__delete-button
+        width: 200px
+        height: 40px
+        top: 75%
+        left: 45% !important
+        border: 1px solid transparent
+        border-radius: 6px
+        &:active
+            background-color: var(--space-cadet)
+            border-color: var(--floral-white)
+
+    .product-forms-container__delete-input
+        width: 200px
+        font-size: 1rem
+        top: 45%
+        height: 35px !important
+        border: 1px solid var(--space-cadet)
+        border-radius: 6px
+        padding: 0 0.25rem
+        line-height: 5px
+        &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+            -webkit-appearance: none
 
 @media screen and (max-width: 1024px)
     .product-forms-container

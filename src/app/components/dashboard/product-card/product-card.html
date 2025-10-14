@@ -1,0 +1,15 @@
+<article class="product-card">
+    <div class="product-card__box-header d-flex justify-content-between align-items-center gap-3">
+        <ion-icon name="cube-outline"></ion-icon>
+        <div class="product-card__box-title d-flex">
+            <h5 class="product-card__name">{{this.name()}}</h5>
+            <small class="product-card__id">{{this.id()}}</small>
+        </div>
+    </div>
+    <div class="product-card__box-data">
+        <p class="product-card__phone">Quantidade: <span>{{this.quantity()}}</span></p>
+        <p class="product-card__cnpj">Quantidade Máxima: <span>{{this.maxQuantity()}}</span></p>
+        <p class="product-card__email">Quantidade Mínima: <span>{{this.minQuantity()}}</span></p>
+        <p class="product-card__cep">Preço de Venda: <span>{{this.total()}}</span></p>
+    </div>
+</article>

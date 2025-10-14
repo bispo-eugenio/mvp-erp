@@ -1,0 +1,56 @@
+.product-card
+    display: flex
+    flex-direction: column
+    gap: 1rem
+    min-width: 250px
+    min-height: 230px
+    max-width: 275px
+    max-height: 275px
+    padding: 0.5rem
+    border: 1px solid var(--space-cadet)
+    border-radius: 8px
+    background-color: var(--space-cadet)
+
+
+    .product-card__box-header
+        padding: 0 0.25rem
+        & .product-card__box-title
+            color: var(--floral-white)
+        & .product-card__name
+            min-width: 150px
+            max-width: 150px
+            font-size: 1rem
+            text-overflow: ellipsis
+            white-space: nowrap
+            overflow: hidden
+        & ion-icon
+            margin: 0 auto
+            width: 35px
+            height: 35px
+            margin-right: 0.5rem
+            font-size: 2rem
+            color: var(--floral-white)
+
+    .product-card__id
+        height: 20px
+        border: 1px solid var(--bs-gray-400)
+        color: #000000
+        padding: 0 0.25rem
+        background-color: var(--bs-gray-400)
+        border-radius: 8px
+
+    .product-card__cnpj, 
+    .product-card__phone, .product-card__email, 
+    .product-card__cep
+        display: flex
+        align-items: center
+        gap: 0.25rem
+        font-size: 1rem
+        color: var(--floral-white)
+        & span
+            font-size: 0.75rem
+            color: var(--floral-white)
+            word-wrap: break-word
+
+    .product-card__name
+        font-size: 1.3rem

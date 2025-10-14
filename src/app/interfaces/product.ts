@@ -1,11 +1,10 @@
 interface ProductInterface {
     id: string, //registra pt
     name: string,
-    timestamp: string, //registra pt 
-    minQuantity: string,
-    maxQuantity: string
-    quantity: number,
-    price: number,
-    profit: number,
-    total: number //Calculo de lucro
+    minQuantity: number | null,
+    maxQuantity: number | null,
+    quantity: number | null,
+    price: number | null,
+    profit: number | null,
+    total: number | null //Calculo de lucro
 }

@@ -54,7 +54,7 @@
     background-color: var(--space-cadet-active)
     color: var(--floral-white)
     transition: 300ms ease
-
+.forms-container__button
     &:hover
         background-color: var(--space-cadet)
         transition: 300ms ease-out
@@ -146,6 +146,11 @@
         width: 200px
         height: 45px
         top: 75%
+        border: 1px solid transparent
+        border-radius: 6px
+        &:active
+            background-color: var(--space-cadet)
+            border-color: var(--floral-white)
 
     .client-forms-container__delete-input
         top: 50%

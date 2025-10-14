@@ -75,7 +75,7 @@ export class Client implements OnInit {
         this.describeDialog = "E-mail ou/e cnpj cadastrado(s)"
         return
       }
-      this.listId.push(this.client.id)
+      this.listId.push(newClient.id)
       this.clientCollection.push(newClient)
       this.dashboardService.setItem("client", this.clientCollection);
       const dataClient = this.getRegisterClient()
